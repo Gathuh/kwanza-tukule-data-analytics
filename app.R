@@ -10,6 +10,7 @@ library(factoextra)
 
 # Load and preprocess data
 updated_data <- read_csv("Case Study Data - Read Only - case_study_data_2025-01-16T06_49_12.19881Z.csv")
+updated_data<-sample_n(updated_data,1000)
 updated_data$DATE <- mdy_hm(updated_data$DATE, tz = "Africa/Nairobi")
 updated_data <- na.exclude(updated_data)
 updated_data$value <- updated_data$QUANTITY * updated_data$`UNIT PRICE`
